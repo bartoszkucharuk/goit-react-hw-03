@@ -15,6 +15,9 @@ const initialTask = [
 
 function App() {
   const [tasks, setTasks] = useState(initialTask);
+  const [filter, setFilter] = useState("");
+
+
   const deleteTask = (id) => {
     console.log("delete task", id);
     setTasks((prev) => prev.filter((task) => task.id !== id));
@@ -24,10 +27,15 @@ function App() {
     setTasks(prev => [...prev, newTask]);
   };
 
+  const handleFilterChange = e => {
+    setFilter(e.target.value);
+   }
+
   return (
     <>
+      {filter}
       <Form addTask={addTask} />
-      <Filter />
+      <Filter handleFilterChange={handleFilterChange} value={filter} />
       <TasksList tasks={tasks} deleteTask={deleteTask} />
     </>
   )
