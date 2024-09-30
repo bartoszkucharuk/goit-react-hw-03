@@ -11,9 +11,8 @@ function App() {
 
   return (
     <>
-      <Filter />
       <Form />
-      <Task />
+      <Filter />
       <TasksList />
     </>
   )

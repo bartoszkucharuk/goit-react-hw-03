@@ -2,6 +2,12 @@ import React from 'react'
 
 export default function Filter() {
   return (
-    <div>Filter</div>
+    <form>
+      <label>
+        Search: <br />
+        <input type="text" />
+      </label>
+
+     </form>
   )
 }

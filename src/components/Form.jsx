@@ -2,8 +2,9 @@ import React from 'react'
 
 export default function Form() {
   return (
-    <div>
-     Form
-    </div>
+    <form>
+      <input type="text" />
+      <button type="submit">Add task</button>
+    </form>
   )
 }
