@@ -29,14 +29,17 @@ function App() {
 
   const handleFilterChange = e => {
     setFilter(e.target.value);
-   }
+  };
+
+  const visibleTasks = tasks.filter(task => task.title.toLowerCase().includes(filter.toLocaleLowerCase())
+  );
 
   return (
     <>
       {filter}
       <Form addTask={addTask} />
       <Filter handleFilterChange={handleFilterChange} value={filter} />
-      <TasksList tasks={tasks} deleteTask={deleteTask} />
+      <TasksList tasks={visibleTasks} deleteTask={deleteTask} />
     </>
   )
 }
