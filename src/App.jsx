@@ -3,17 +3,28 @@ import './App.css';
 
 import Filter from "./components/Filter"
 import Form from "./components/Form"
-import Task from "./components/Task"
 import TasksList from "./components/TasksList"
 
+const initialTask = [
+  { id: 1, title: "Task 1" },
+  { id: 2, title: "Task 2" },
+  { id: 3, title: "Task 3" },
+  { id: 4, title: "Task 4" },
+  { id: 5, title: "Task 5" },
+];
+
 function App() {
-  const [count, setCount] = useState(0)
+  const [tasks, setTasks] = useState(initialTask);
+  const deleteTask = (id) => {
+    console.log("delete task", id);
+    setTasks((prev) => prev.filter((task) => task.id !== id));
+   }
 
   return (
     <>
       <Form />
       <Filter />
-      <TasksList />
+      <TasksList tasks={tasks} deleteTask={deleteTask} />
     </>
   )
 }
