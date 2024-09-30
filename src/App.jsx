@@ -18,11 +18,15 @@ function App() {
   const deleteTask = (id) => {
     console.log("delete task", id);
     setTasks((prev) => prev.filter((task) => task.id !== id));
-   }
+  };
+
+  const addTask = newTask => {
+    setTasks(prev => [...prev, newTask]);
+  };
 
   return (
     <>
-      <Form />
+      <Form addTask={addTask} />
       <Filter />
       <TasksList tasks={tasks} deleteTask={deleteTask} />
     </>
