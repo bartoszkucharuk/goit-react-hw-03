@@ -1,16 +1,16 @@
 import React from 'react';
-import Task from "./Task";
+import Contact from "./Contact";
 
-export default function TasksList({tasks, deleteTask}) {
+export default function ContactList({tasks, deleteContact}) {
   return (
     <div>
       TasksList:
       {tasks.map((task) => (
-        <Task
+        <Contact
           key={task.id}
           id={task.id}
           title={task.title}
-          deleteTask={deleteTask} />
+          deleteContact={deleteContact} />
       ))}
     </div>
   )

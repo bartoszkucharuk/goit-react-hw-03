@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Filter({value, handleFilterChange}) {
+export default function SearchBox({value, handleFilterChange}) {
   return (
     <form>
       <label>

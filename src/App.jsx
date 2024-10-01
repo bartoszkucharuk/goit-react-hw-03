@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 
-import Filter from "./components/Filter"
-import Form from "./components/Form"
-import TasksList from "./components/TasksList"
+import SearchBox from "./components/SearchBox"
+import ContactForm from "./components/ContactForm"
+import ContactList from "./components/ContactList"
 
 const initialTask = [
   { id: 1, title: "Task 1" },
@@ -18,8 +18,8 @@ function App() {
   const [filter, setFilter] = useState("");
 
 
-  const deleteTask = (id) => {
-    console.log("delete task", id);
+  const deleteContact = (id) => {
+    console.log("delete contact", id);
     setTasks((prev) => prev.filter((task) => task.id !== id));
   };
 
@@ -36,10 +36,9 @@ function App() {
 
   return (
     <>
-      {filter}
-      <Form addTask={addTask} />
-      <Filter handleFilterChange={handleFilterChange} value={filter} />
-      <TasksList tasks={visibleTasks} deleteTask={deleteTask} />
+      <ContactForm addTask={addTask} />
+      <SearchBox handleFilterChange={handleFilterChange} value={filter} />
+      <ContactList tasks={visibleTasks} deleteContact={deleteContact} />
     </>
   )
 }
