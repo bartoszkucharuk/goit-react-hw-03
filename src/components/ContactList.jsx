@@ -9,7 +9,7 @@ export default function ContactList({contacts, deleteContact}) {
         <Contact
           key={contact.id}
           id={contact.id}
-          title={contact.title}
+          name={contact.name}
           deleteContact={deleteContact} />
       ))}
     </div>
