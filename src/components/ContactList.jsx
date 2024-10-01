@@ -4,7 +4,7 @@ import Contact from "./Contact";
 export default function ContactList({tasks, deleteContact}) {
   return (
     <div>
-      TasksList:
+      Contacts list:
       {tasks.map((task) => (
         <Contact
           key={task.id}
