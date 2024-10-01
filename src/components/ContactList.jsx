@@ -10,6 +10,7 @@ export default function ContactList({contacts, deleteContact}) {
           key={contact.id}
           id={contact.id}
           name={contact.name}
+          number={contact.number}
           deleteContact={deleteContact} />
       ))}
     </div>
