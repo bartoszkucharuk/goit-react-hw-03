@@ -13,31 +13,31 @@ const initialContacts = [
 ];
 
 function App() {
-  const [tasks, setTasks] = useState(initialContacts);
+  const [contacts, setContacts] = useState(initialContacts);
   const [filter, setFilter] = useState("");
 
 
   const deleteContact = (id) => {
     console.log("delete contact", id);
-    setTasks((prev) => prev.filter((task) => task.id !== id));
+    setContacts((prev) => prev.filter((contact) => contact.id !== id));
   };
 
-  const addTask = newTask => {
-    setTasks(prev => [...prev, newTask]);
+  const addContact = newContact => {
+    setContacts(prev => [...prev, newContact]);
   };
 
   const handleFilterChange = e => {
     setFilter(e.target.value);
   };
 
-  const visibleTasks = tasks.filter(task => task.title.toLowerCase().includes(filter.toLocaleLowerCase())
+  const visibleContacts = contacts.filter(contact => contact.title.toLowerCase().includes(filter.toLocaleLowerCase())
   );
 
   return (
     <>
-      <ContactForm addTask={addTask} />
+      <ContactForm addContact={addContact} />
       <SearchBox handleFilterChange={handleFilterChange} value={filter} />
-      <ContactList tasks={visibleTasks} deleteContact={deleteContact} />
+      <ContactList contacts={visibleContacts} deleteContact={deleteContact} />
     </>
   )
 }
