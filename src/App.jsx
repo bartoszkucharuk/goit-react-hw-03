@@ -14,7 +14,7 @@ const initialContacts = [
 
 function App() {
   const [contacts, setContacts] = useState(initialContacts);
-  const [filter, setFilter] = useState("");
+  const [contactFilter, setContactFilter] = useState("");
 
 
   const deleteContact = (id) => {
@@ -27,16 +27,16 @@ function App() {
   };
 
   const handleFilterChange = e => {
-    setFilter(e.target.value);
+    setContactFilter(e.target.value);
   };
 
-  const visibleContacts = contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLocaleLowerCase())
+  const visibleContacts = contacts.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLocaleLowerCase())
   );
 
   return (
     <>
       <ContactForm addContact={addContact} />
-      <SearchBox handleFilterChange={handleFilterChange} value={filter} />
+      <SearchBox handleFilterChange={handleFilterChange} value={contactFilter} />
       <ContactList contacts={visibleContacts} deleteContact={deleteContact} />
     </>
   )
