@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 
-import SearchBox from "./components/SearchBox"
-import ContactForm from "./components/ContactForm"
-import ContactList from "./components/ContactList"
+import SearchBox from "./components/SearchBox";
+import ContactForm from "./components/ContactForm";
+import ContactList from "./components/ContactList";
 
 const initialContacts = [
   {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
