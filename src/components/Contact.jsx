@@ -1,11 +1,14 @@
-import React from 'react'
+import React from 'react';
+import styles from "./Contact.module.css";
 
 export default function Contact({name, number, deleteContact, id}) {
   return (
-    <div>
-      {name}<br />
-      {number} ({id})
-      <button onClick={() => deleteContact(id)}>Delete</button>
+    <div className={styles.singleContact}>
+      <div className={styles.contactData}>
+        <p className={styles.contactName}>{name}</p>
+        <p className={styles.contactNumber}>{number}</p>
+      </div>
+      <button className={styles.contactDeleteBtn} onClick={() => deleteContact(id)}>Delete</button>
     </div>
   )
 }

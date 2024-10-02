@@ -30,10 +30,16 @@ export default function ContactForm({ addContact }) {
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={Schema}>
       <Form>
-        <label htmlFor='nameFieldId'>name</label>
-        <Field type="text" name="name" id={nameFieldId}></Field>
-        <label htmlFor='numberFieldId'>number</label>
-        <Field type="text" name="number" id={numberFieldId}></Field>
+        <div>
+          <label htmlFor='nameFieldId'>name</label>
+          <Field type="text" name="name" id={nameFieldId}></Field>
+          <ErrorMessage name="name" as="span" />
+        </div>
+        <div>
+          <label htmlFor='numberFieldId'>number</label>
+          <Field type="text" name="number" id={numberFieldId}></Field>
+          <ErrorMessage name="number" as="span" />
+        </div>
         <button type="submit">Add contact</button>
       </Form>
     </Formik>
