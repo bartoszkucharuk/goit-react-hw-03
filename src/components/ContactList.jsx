@@ -1,10 +1,10 @@
 import React from 'react';
 import Contact from "./Contact";
+import styles from "./ContactList.module.css";
 
 export default function ContactList({contacts, deleteContact}) {
   return (
-    <div>
-      Contacts list:
+    <div className={styles.contactList}>
       {contacts.map((contact) => (
         <Contact
           key={contact.id}
