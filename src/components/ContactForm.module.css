@@ -40,4 +40,5 @@
 .addContactBtn:focus {
     border: 1px solid blue;
     background-color: lightgrey;
+    border-radius: 25px;
 }
