@@ -13,6 +13,7 @@ const initialContacts = [
 ];
 
 function App() {
+  // const [contacts, setContacts] = useState(initialContacts);
   const [contacts, setContacts] = useState(initialContacts);
   const [contactFilter, setContactFilter] = useState("");
 

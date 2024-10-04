@@ -3,6 +3,7 @@ import React from 'react';
 import { useId } from "react";
 import { v4 as uuidv4 } from "uuid";
 import * as Yup from "yup";
+import styles from "./ContactForm.module.css"
 
 export default function ContactForm({ addContact }) {
   const nameFieldId = useId();
@@ -29,18 +30,18 @@ export default function ContactForm({ addContact }) {
 
   return (
     <Formik initialValues={initialValues} onSubmit={handleSubmit} validationSchema={Schema}>
-      <Form>
-        <div>
-          <label htmlFor='nameFieldId'>name</label>
-          <Field type="text" name="name" id={nameFieldId}></Field>
+      <Form className={styles.form}>
+        <div className={styles.formLabel}>
+          <label htmlFor='nameFieldId'>Name</label>
+          <Field type="text" name="name" id={nameFieldId} className={styles.formInput}></Field>
           <ErrorMessage name="name" as="span" />
         </div>
-        <div>
-          <label htmlFor='numberFieldId'>number</label>
-          <Field type="text" name="number" id={numberFieldId}></Field>
+        <div className={styles.formLabel}>
+          <label htmlFor='numberFieldId'>Number</label>
+          <Field type="text" name="number" id={numberFieldId} className={styles.formInput}></Field>
           <ErrorMessage name="number" as="span" />
         </div>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={styles.addContactBtn}>Add contact</button>
       </Form>
     </Formik>
   )

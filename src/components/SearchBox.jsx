@@ -6,9 +6,9 @@ export default function SearchBox({value, handleFilterChange}) {
   return (
     <form>
     <div>
-      <label>
-        Find contacts by name<br />
-        <input type="text" value={value} onChange={handleFilterChange} />
+      <label className={styles.searchBoxLabel}>
+        Find contacts by name
+        <input type="text" value={value} onChange={handleFilterChange} className={styles.searchBoxInput} />
       </label>
     </div>
      </form>
