@@ -16,7 +16,6 @@ function App() {
   const [contacts, setContacts] = useState(initialContacts);
   const [contactFilter, setContactFilter] = useState("");
 
-
   const deleteContact = (id) => {
     console.log("delete contact", id);
     setContacts((prev) => prev.filter((contact) => contact.id !== id));
