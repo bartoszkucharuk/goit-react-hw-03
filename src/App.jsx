@@ -13,17 +13,17 @@ const initialContacts = [
 ];
 
 function App() {
-  const [contacts, setContacts] = useState(initialContacts);
+  // const [contacts, setContacts] = useState(initialContacts);
 // ______________________________________________________________________________
 
-  // const [contacts, setContacts] = useState(() => {
-  //   const savedContacts = window.localStorage.getItem("saved-contacts");
-  //   return savedContacts ? JSON.parse(savedContacts) : {initialContacts};
-  // });
+  const [contacts, setContacts] = useState(() => {
+    const savedContacts = window.localStorage.getItem("saved-contacts");
+    return savedContacts ? JSON.parse(savedContacts) : {initialContacts};
+  });
 
-  // useEffect(() => {
-  //   window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
-  // }, [contacts]);
+  useEffect(() => {
+    window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
+  }, [contacts]);
 // ______________________________________________________________________________
   const [contactFilter, setContactFilter] = useState("");
 
