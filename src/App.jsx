@@ -13,17 +13,17 @@ const initialContacts = [
 ];
 
 function App() {
-  // const [contacts, setContacts] = useState(initialContacts);
+  const [contacts, setContacts] = useState(initialContacts);
 // ______________________________________________________________________________
 
-  const [contacts, setContacts] = useState(() => {
-    const savedContacts = window.localStorage.getItem("saved-contacts");
-    return savedContacts ? JSON.parse(savedContacts) : {initialContacts};
-  });
+  // const [contacts, setContacts] = useState(() => {
+  //   const savedContacts = window.localStorage.getItem("saved-contacts");
+  //   return savedContacts ? JSON.parse(savedContacts) : {initialContacts};
+  // });
 
-  useEffect(() => {
-    window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
-  }, [contacts]);
+  // useEffect(() => {
+  //   window.localStorage.setItem("saved-contacts", JSON.stringify(contacts));
+  // }, [contacts]);
 // ______________________________________________________________________________
   const [contactFilter, setContactFilter] = useState("");
 
@@ -40,14 +40,14 @@ function App() {
     setContactFilter(e.target.value);
   };
 
-  const searchedContacts = contacts.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLocaleLowerCase())
+  const filteredContacts = contacts.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLocaleLowerCase())
   );
 
   return (
     <>
       <ContactForm addContact={addContact} />
       <SearchBox handleFilterChange={handleFilterChange} value={contactFilter} />
-      <ContactList contacts={searchedContacts} deleteContact={deleteContact} />
+      <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
     </>
   )
 }
