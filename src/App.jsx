@@ -40,14 +40,14 @@ function App() {
     setContactFilter(e.target.value);
   };
 
-  const visibleContacts = contacts.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLocaleLowerCase())
+  const searchedContacts = contacts.filter(contact => contact.name.toLowerCase().includes(contactFilter.toLocaleLowerCase())
   );
 
   return (
     <>
       <ContactForm addContact={addContact} />
       <SearchBox handleFilterChange={handleFilterChange} value={contactFilter} />
-      <ContactList contacts={visibleContacts} deleteContact={deleteContact} />
+      <ContactList contacts={searchedContacts} deleteContact={deleteContact} />
     </>
   )
 }
