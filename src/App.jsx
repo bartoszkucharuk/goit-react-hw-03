@@ -45,6 +45,7 @@ function App() {
 
   return (
     <>
+      <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
       <SearchBox handleFilterChange={handleFilterChange} value={contactFilter} />
       <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
